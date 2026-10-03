@@ -1,0 +1,390 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Celebrate Pchum Ben with MengHeng Productions and explore a collection of free digital resources.">
+  <title>Pchum Ben Festival — MengHeng Productions</title>
+  <link rel="icon" type="image/png" href="cropped_circle_image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+Khmer:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body.pchum-ben-page {
+      --paper: #f5efe4;
+      --paper-deep: #eadcc8;
+      --ink: #352520;
+      --ink-soft: #75635b;
+      --card: #fffaf2;
+      --line: #e4d2b8;
+      --moss: #a84c38;
+      --moss-deep: #813828;
+      --rule: rgba(70, 43, 31, .12);
+      --shadow-soft: rgba(67, 39, 26, .14);
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(204, 157, 91, .13), transparent 38%),
+        var(--paper);
+    }
+
+    body.pchum-ben-page[data-theme="dark"] {
+      --paper: #191b20;
+      --paper-deep: #25262b;
+      --ink: #f7efe2;
+      --ink-soft: #c3b5a6;
+      --card: #24252a;
+      --line: #45403b;
+      --moss: #d28c64;
+      --moss-deep: #e6a47b;
+      --rule: rgba(255, 245, 226, .12);
+      --shadow-soft: rgba(0, 0, 0, .3);
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(204, 157, 91, .1), transparent 38%),
+        var(--paper);
+    }
+
+    body.pchum-ben-page .hero.festival-hero {
+      position: relative;
+      isolation: isolate;
+      display: flex;
+      min-height: 430px;
+      max-width: none;
+      align-items: center;
+      overflow: hidden;
+      padding: clamp(34px, 7vw, 78px);
+      border: 1px solid rgba(255, 232, 190, .3);
+      border-radius: 30px;
+      background:
+        radial-gradient(ellipse at 76% 35%, rgba(239, 192, 119, .22), transparent 33%),
+        linear-gradient(125deg, #402a2c 0%, #683a32 52%, #9a5940 100%);
+      box-shadow: 0 24px 60px rgba(81, 46, 32, .2);
+    }
+
+    body.pchum-ben-page .festival-hero::before {
+      position: absolute;
+      z-index: -1;
+      inset: 13px;
+      border: 1px solid rgba(255, 236, 201, .2);
+      border-radius: 22px;
+      content: "";
+      pointer-events: none;
+    }
+
+    body.pchum-ben-page .festival-hero::after {
+      position: absolute;
+      z-index: -2;
+      inset: 0;
+      background:
+        radial-gradient(circle at 84% 27%, rgba(255, 224, 165, .9) 0 2px, transparent 3px),
+        radial-gradient(circle at 91% 51%, rgba(255, 224, 165, .68) 0 1px, transparent 2px),
+        radial-gradient(circle at 68% 63%, rgba(255, 224, 165, .72) 0 1px, transparent 2px),
+        radial-gradient(circle at 74% 17%, rgba(255, 224, 165, .55) 0 1px, transparent 2px),
+        linear-gradient(90deg, rgba(36, 25, 31, .42), transparent 82%);
+      content: "";
+      pointer-events: none;
+    }
+
+    body.pchum-ben-page .festival-art {
+      position: absolute;
+      z-index: -1;
+      right: 1%;
+      bottom: 2%;
+      width: min(47%, 450px);
+      height: auto;
+      opacity: .52;
+      pointer-events: none;
+    }
+
+    body.pchum-ben-page .festival-wordmark {
+      position: absolute;
+      z-index: 0;
+      top: 8%;
+      right: 8%;
+      width: clamp(145px, 23%, 255px);
+      height: auto;
+      filter: drop-shadow(0 12px 24px rgba(33, 20, 18, .32));
+      pointer-events: none;
+    }
+
+    body.pchum-ben-page .festival-hero .scrolling-mark { display: none; }
+    body.pchum-ben-page .festival-hero .hero-copy { z-index: 1; width: min(66%, 650px); max-width: 650px; color: #fff9ed; }
+    body.pchum-ben-page .festival-hero .eyebrow { color: #f4d9a6; }
+    body.pchum-ben-page .festival-hero .eyebrow span { background: #f4d9a6; }
+    body.pchum-ben-page .festival-hero h1 { font-size: clamp(2.8rem, 7.3vw, 5.4rem); }
+    body.pchum-ben-page .festival-hero h1 em { color: #f5d391; }
+
+    body.pchum-ben-page .festival-khmer {
+      margin: 10px 0 0;
+      color: #ffe3b3;
+      font-family: "Noto Sans Khmer", sans-serif;
+      font-size: clamp(1.15rem, 3vw, 1.65rem);
+      font-weight: 500;
+      line-height: 1.8;
+    }
+
+    body.pchum-ben-page .festival-caption {
+      max-width: 590px;
+      margin: 14px 0 0;
+      color: rgba(255, 249, 237, .88);
+      font-size: clamp(.95rem, 1.7vw, 1.05rem);
+      line-height: 1.8;
+    }
+
+    body.pchum-ben-page .festival-caption-khmer {
+      max-width: 620px;
+      margin: 5px 0 0;
+      color: #f4d9a6;
+      font-family: "Noto Sans Khmer", sans-serif;
+      font-size: .95rem;
+      line-height: 1.9;
+    }
+
+    body.pchum-ben-page .product-card {
+      border-color: rgba(152, 96, 61, .22);
+      background: linear-gradient(155deg, var(--card), color-mix(in srgb, var(--card) 86%, var(--gold, #d4a76a)));
+      box-shadow: 0 14px 36px rgba(83, 49, 33, .09);
+    }
+
+    body.pchum-ben-page .product-card:hover {
+      border-color: rgba(168, 76, 56, .45);
+      box-shadow: 0 22px 46px rgba(83, 49, 33, .15);
+    }
+
+    body.pchum-ben-page .product-image {
+      background: linear-gradient(140deg, #ead7bb, #fff8e9);
+    }
+
+    body.pchum-ben-page .product-image img { mix-blend-mode: normal; }
+    body.pchum-ben-page .product-tag,
+    body.pchum-ben-page .image-number {
+      border-color: rgba(152, 96, 61, .18);
+      background: rgba(255, 250, 242, .88);
+      color: #603b2e;
+    }
+
+    body.pchum-ben-page .product-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 12px;
+      top: 26px;
+      border: 1px solid rgba(255, 239, 202, .8);
+      border-radius: 8px;
+      background: linear-gradient(135deg, #fffaf0, #f1dfbd);
+      box-shadow: 0 5px 15px rgba(66, 37, 26, .18), inset 0 1px 0 rgba(255, 255, 255, .9);
+      color: #713a2c;
+      font-family: "DM Mono", "Noto Sans Khmer", monospace;
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: .045em;
+    }
+
+    body.pchum-ben-page .product-tag::before {
+      position: absolute;
+      top: -18px;
+      left: 1px;
+      width: 96px;
+      height: 22px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 42'%3E%3Cpath d='M2 2 Q75 28 148 2' fill='none' stroke='%235c4840' stroke-width='2'/%3E%3Cpath d='M12 5 L28 10 L23 27 Z' fill='%23f4a62a'/%3E%3Cpath d='M34 12 L50 16 L45 33 Z' fill='%23f4d44f'/%3E%3Cpath d='M57 18 L73 21 L68 39 Z' fill='%234bad67'/%3E%3Cpath d='M80 22 L96 24 L91 41 Z' fill='%2394489d'/%3E%3Cpath d='M103 23 L119 21 L115 39 Z' fill='%23e34e3d'/%3E%3Cpath d='M126 17 L142 12 L138 31 Z' fill='%23399bc8'/%3E%3C/svg%3E") center / contain no-repeat;
+      content: "";
+      pointer-events: none;
+    }
+
+    body.pchum-ben-page .download-button {
+      border-color: rgba(255, 255, 255, .35);
+      background: linear-gradient(180deg, #b65b40, #873b30);
+      box-shadow: 0 8px 18px rgba(135, 59, 48, .2);
+    }
+
+    body.pchum-ben-page .download-button:hover {
+      background: linear-gradient(180deg, #c66a4d, #713126);
+    }
+
+    body.pchum-ben-page[data-theme="dark"] .product-card {
+      border-color: rgba(222, 171, 125, .2);
+      background: linear-gradient(155deg, #29282a, #242326);
+    }
+
+    body.pchum-ben-page[data-theme="dark"] .product-image {
+      background: linear-gradient(140deg, #393237, #29282a);
+    }
+
+    body.pchum-ben-page[data-theme="dark"] .product-tag,
+    body.pchum-ben-page[data-theme="dark"] .image-number {
+      border-color: rgba(245, 217, 174, .2);
+      background: rgba(40, 36, 35, .88);
+      color: #f6e8d1;
+    }
+
+    body.pchum-ben-page[data-theme="dark"] .product-tag {
+      top: 26px;
+      border-color: rgba(238, 196, 139, .44);
+      background: linear-gradient(135deg, #49342e, #342a29);
+      box-shadow: 0 5px 16px rgba(0, 0, 0, .3), inset 0 1px 0 rgba(255, 245, 220, .08);
+      color: #ffe3b3;
+    }
+
+    @media (max-width: 600px) {
+      body.pchum-ben-page .hero.festival-hero {
+        min-height: 470px;
+        align-items: flex-end;
+        padding: 44px 25px;
+        border-radius: 23px;
+      }
+
+      body.pchum-ben-page .festival-art {
+        right: -12%;
+        bottom: 0;
+        width: 86%;
+        height: auto;
+        opacity: .22;
+      }
+
+      body.pchum-ben-page .festival-wordmark {
+        top: 5%;
+        right: 7%;
+        width: clamp(80px, 27%, 105px);
+        opacity: .9;
+      }
+
+      body.pchum-ben-page .festival-hero .hero-copy { width: 100%; max-width: 100%; padding-top: 84px; }
+      body.pchum-ben-page .festival-caption-khmer { font-size: .86rem; }
+    }
+  </style>
+</head>
+<body class="pchum-ben-page">
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="MengHeng Productions home"><img class="brand-logo" src="cropped_circle_image.png" alt="MengHeng Productions logo"><span>mengheng productions</span><img class="verified-badge" src="icons8-blue-tick-48.png" alt="" aria-hidden="true"></a>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">
+        <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+        <span class="theme-toggle-text">Theme</span>
+      </button>
+    </header>
+
+    <main id="top">
+      <section class="hero festival-hero" aria-labelledby="hero-title">
+        <div class="scrolling-mark" aria-hidden="true">
+          <div class="scrolling-mark-track">
+            <svg viewBox="0 0 160 160" focusable="false">
+              <circle cx="80" cy="80" r="67" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 7"></circle>
+              <path d="M80 39v55m-22-22 22 22 22-22M51 112v9h58v-9" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            <svg viewBox="0 0 160 160" focusable="false">
+              <circle cx="80" cy="80" r="67" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 7"></circle>
+              <path d="M80 39v55m-22-22 22 22 22-22M51 112v9h58v-9" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+        </div>
+        <img class="festival-art" src="cambodia.png" alt="" aria-hidden="true">
+        <img class="festival-wordmark" src="pchum-ben-khmer.png" alt="" aria-hidden="true">
+        <div class="hero-copy">
+          <p class="eyebrow">A Cambodian festival of remembrance <span></span> Pchum Ben</p>
+          <h1 id="hero-title">Pchum Ben<br><em>Festival</em></h1>
+          <p class="festival-khmer" lang="km">បុណ្យភ្ជុំបិណ្ឌ</p>
+          <p class="festival-caption"></p>
+          <p class="festival-caption-khmer" lang="km">ក្នុងឱកាសបុណ្យភ្ជុំបិណ្ឌ ដែលជាប្រពៃណីដ៏ថ្លៃថ្លារបស់ជាតិខ្មែរ ខ្ញុំសូមគោរពជូនពរ លោក លោកស្រី និងក្រុមគ្រួសារ សូមប្រកបដោយសុខភាពល្អ សុភមង្គល វិបុលសុខ សិរីសួស្តី និងជោគជ័យក្នុងគ្រប់ភារកិច្ច។
+
+សូមឱ្យឱកាសដ៏ប្រពៃនេះ នាំមកនូវសេចក្តីសុខ សេចក្តីចម្រើន ភាពសុខដុមរមនា និងភាពរុងរឿងជូនដល់ក្រុមគ្រួសារ។ សូមឱ្យការធ្វើដំណើរទៅកាន់ស្រុកកំណើត និងការវិលត្រឡប់មកវិញ ប្រកបដោយសុវត្ថិភាព។
+
+ជាពិសេស សូមឱ្យកុសលផលបុណ្យដែលបានប្រព្រឹត្តក្នុងឱកាសនេះ ជួយជំរុញឱ្យជីវិតជួបប្រទះតែសេចក្តីល្អ និងភាពចម្រុងចម្រើនជានិច្ច។
+
+សូមអនុមោទនាបុណ្យភ្ជុំបិណ្ឌ និងសូមទទួលនូវពរជ័យ សិរីមង្គលគ្រប់ប្រការ។ 🙏</p>
+        </div>
+      </section>
+
+      <section class="collection-section" id="collection" aria-labelledby="collection-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">The library</p><h2 id="collection-title">Start anywhere.</h2></div>
+           <div class="toolbar"><label class="search-box"><span aria-hidden="true">&#9906;</span><input id="searchInput" type="search" placeholder="Search the library" aria-label="Search products"></label><div class="filter-wrap"><button class="filter-button" id="filterButton" type="button" aria-expanded="false">All products <span>&#8595;</span></button><div class="filter-menu" id="filterMenu"><button type="button" data-filter="all">All products</button><button type="button" data-filter="free">Free items</button><button type="button" data-filter="bot telegram">Bot Telegram</button><button type="button" data-filter="Books">Books</button><button type="button" data-filter="mobile editing">App edit on phone</button><button type="button" data-filter="html">HTML</button><button type="button" data-filter="adobe">Adobe</button><button type="button" data-filter="cursors">Cursors</button></div></div></div>
+        </div>
+        <div class="product-grid" id="productGrid">
+          <article class="product-card" data-category="bot telegram" data-status="free" data-search="bot telegram code python exam automation free">
+            <div class="product-image image-planner"><span class="product-tag">Free</span><img src="Bot.jpg" alt="Telegram bot for exam automation, Python code"><span class="image-number">01</span></div>
+            <div class="product-info"><div><h3>Telegram Exam Bot (Python)</h3><p>A Telegram bot that automates exam-related tasks.</p><p class="file-specs">ZIP · 35.3 KB &nbsp;·&nbsp; Python source</p></div><div class="product-meta"><span>ZIP · Python</span><a class="download-button" href="Bot telegram.zip" download="Telegram-Exam-Bot.zip" data-name="Telegram Exam Bot" data-specs="Requires Python 3 to run &nbsp;·&nbsp; ZIP · 35.3 KB">Get free <span>&#8595;</span></a></div></div>
+          </article>
+          <article class="product-card" data-category="Books" data-status="free" data-search="Books free product ebook guide pdf">
+            <div class="product-image image-guide"><span class="product-tag">Free</span><img src="វិធីសាស្ដ្រនៃការតែងសេចក្ដី.jpg" alt="វិធីសាស្ដ្រនៃការតែងសេចក្ដី"><span class="image-number">02</span></div>
+            <div class="product-info"><div><h3>វិធីសាស្ដ្រនៃការតែងសេចក្ដី​​ សម្រាប់មធ្យមសិក្សាឋមភូមិ​ ថ្នាក់ទី៧​ ទី៨ និងទី៩</h3><p>វិធីសាស្ដ្រនៃការតែងសេចក្ដី​​ សម្រាប់មធ្យមសិក្សាឋមភូមិ​ ថ្នាក់ទី៧​ ទី៨ និងទី៩</p><p class="file-specs">ZIP · 464 MB</p></div><div class="product-meta"><span>ZIP · 2 folders</span><a class="download-button" href="https://sala.moeys.gov.kh/library/00004508" target="_blank" rel="noopener noreferrer" data-name="វិធីសាស្ដ្រនៃការតែងសេចក្ដី​​ សម្រាប់មធ្យមសិក្សាឋមភូមិ​ ថ្នាក់ទី៧​ ទី៨ និងទី៩" data-specs="Official library page">Visit site <span>&#8599;</span></a></div></div>
+          </article>
+          <article class="product-card" data-category="mobile editing" data-status="free" data-search="capcut presets templates video editing phone free">
+            <div class="product-image image-toolkit"><span class="product-tag">Free</span><img src="capcut.jpg" alt="CapCut preset pack"><span class="image-number">03</span></div>
+            <div class="product-info"><div><h3>CapCut Pro (No limited) for android</h3><p>Ready-made presets and templates for editing on your phone.</p><p class="file-specs">APK FILE ·  &nbsp;·&nbsp; 328 MB</p></div><div class="product-meta"><span>APK  · CapCut</span><a class="download-button" href="https://drive.google.com/file/d/14OcGwbX5ITxC0iJ-xdDTt-Ve1sfGDnxJ/view?usp=sharing" target="_blank" rel="noopener noreferrer" data-name="CapCut Pro (No limited) for android" data-specs="APK file &nbsp;·&nbsp; 328 MB &nbsp;·&nbsp; Android">Get free <span>&#8599;</span></a></div></div>
+          </article>
+          <article class="product-card" data-category="html" data-status="free" data-search="html css javascript template website free">
+            <div class="product-image image-toolkit"><span class="product-tag">Free</span><img src="html.webp" alt="HTML template"><span class="image-number">04</span></div>
+            <div class="product-info"><div><h3>HTML Khmer Physics learning pages</h3><p>កម្មវិធីពិសោធន៍រូបវិទ្យាអន្តរកម្ម ⚡📚
+រៀនរូបវិទ្យាឲ្យកាន់តែងាយយល់ តាមរយៈការពិសោធន៍ និងចលនាផ្ទាល់ជាមួយ វ៉ិចទ័រ ចលនារថយន្ត ក្រាប និងច្បាប់ ចលនារបស់ញូតុន។ 🔬🚗📐
+រៀន • ពិសោធន៍ • យល់ច្បាស់ • អនុវត្តបាន 🎓</p><p class="file-specs">HTML file · 12KB</p></div><div class="product-meta"><span>ZIP · HTML</span><a class="download-button" href="HTML.zip" download="HTML.zip" data-name="HTML Khmer Physics learning pages" data-specs="HTML file · 12 KB">Get free <span>&#8595;</span></a></div></div>
+          </article>
+          <article class="product-card" data-category="adobe" data-status="free" data-search="adobe illustrator windows software free">
+            <div class="product-image image-toolkit"><span class="product-tag">Free</span><img src="Adobe Illustrator.png" alt="Adobe Illustrator download"><span class="image-number">05</span></div>
+            <div class="product-info"><div><h3>Adobe Illustrator CC</h3><p>Adobe Illustrator CC 2023 for PC/Laptop (Windows 10/11).</p><p class="file-specs">Official site</p></div><div class="product-meta"><span>Windows · Software</span><a class="download-button" href="https://getintopc.com/softwares/design/adobe-illustrator-cc-2023-free-download-5101866/" target="_blank" rel="noopener noreferrer" data-name="Adobe Illustrator CC" data-specs="Official download page">Get free <span>&#8599;</span></a></div></div>
+          </article>
+          <article class="product-card" data-category="cursors" data-status="free" data-search="cursor mouse mac os tahoe for windows free">
+            <div class="product-image image-toolkit"><span class="product-tag">Free</span><img src="Mac tahoe.jpg" alt="macOS Tahoe cursors for Windows"><span class="image-number">06</span></div>
+            <div class="product-info"><div><h3>macOS Tahoe Cursors for Windows</h3><p>A full macOS Tahoe–style cursor pack for Windows.</p><p class="file-specs">ZIP · 1.7 MB</p></div><div class="product-meta"><span>ZIP · Cursors</span><a class="download-button" href="MacOS Tahoe Cursors.zip" download="macOS-Tahoe-Cursors.zip" data-name="macOS Tahoe Cursors for Windows" data-specs="ZIP archive &nbsp;·&nbsp; 1.7 MB &nbsp;·&nbsp; Windows cursor scheme">Get free <span>&#8595;</span></a></div></div>
+          </article>
+          <article class="product-card" data-category="Books" data-status="free" data-search="Books free product pdf">
+            <div class="product-image image-toolkit"><span class="product-tag">Free</span><img src="វិធីសាស្ត្រនៃការសរសេរតែងសេចក្ដីថ្នាក់ទី១០ ទី១១ និងទី១២.jpg" alt="វិធីសាស្ត្រនៃការសរសេរតែងសេចក្ដីថ្នាក់ទី១០ ទី១១ និងទី១២"><span class="image-number">07</span></div>
+            <div class="product-info"><div><h3>វិធីសាស្ត្រនៃការសរសេរតែងសេចក្ដីថ្នាក់ទី១០ ទី១១ និងទី១២</h3><p>វិធីសាស្ត្រនៃការសរសេរតែងសេចក្ដីថ្នាក់ទី១០ ទី១១ និងទី១២</p><p class="file-specs">PDF · 4.06 MB</p></div><div class="product-meta"><span>PDF · 1 fie PDF</span><a class="download-button" href="https://sala.moeys.gov.kh/library/00000844" target="_blank" rel="noopener noreferrer" data-name="វិធីសាស្ត្រនៃការសរសេរតែងសេចក្ដីថ្នាក់ទី១០ ទី១១ និងទី១២" data-specs="Official library page">Visit site <span>&#8599;</span></a></div></div>
+          </article>
+          <article class="product-card" data-category="mobile editing" data-status="free" data-search="alight motion video editing motion graphics android free">
+            <div class="product-image image-toolkit"><span class="product-tag">Free</span><img src="alight motion.png" alt="Alight Motion video editing app"><span class="image-number">08</span></div>
+            <div class="product-info"><div><h3>Alight Motion for Android</h3><p>A mobile video editing app for creating polished videos on your phone.</p><p class="file-specs">APK FILE · Android</p></div><div class="product-meta"><span>APK · Alight Motion</span><a class="download-button" href="https://drive.google.com/file/d/1vzxYIhLsevFISV7QAtZ29yUNM3jDenoX/view?usp=drive_link" target="_blank" rel="noopener noreferrer" data-name="Alight Motion for Android" data-specs="APK file &nbsp;·&nbsp; Android">Get free <span>&#8599;</span></a></div></div>
+          </article>
+        </div>
+        <p class="empty-state" id="emptyState" hidden>No products found. Try another search.</p>
+      </section>
+
+      <section class="about-section" id="about" aria-labelledby="about-title"><div class="about-label"><img class="brand-logo small" src="favicon.png?v=2" alt="MengHeng Productions logo"><span>MengHeng Productions</span></div><div class="about-copy"><h2 id="about-title">Made for the<br><em>next creative move.</em></h2><p>MengHeng Productions creates useful digital products for people who want practical tools, clean design, and simple buying options.</p></div></section>
+
+      <div class="logo-marquee" aria-hidden="true">
+        <div class="logo-marquee-track">
+          <div class="logo-marquee-group">
+            <img src="1.svg" alt="">
+            <img src="2.svg" alt="">
+            <img src="3.svg" alt="">
+            <img src="4.svg" alt="">
+            <img src="5.svg" alt="">
+            <img src="6.svg" alt="">
+            <img src="7.svg" alt="">
+            <img src="8.svg" alt="">
+            <img src="9.svg" alt="">
+            <img src="10.svg" alt="">
+            <img src="11.svg" alt="">
+          </div>
+          <div class="logo-marquee-group">
+            <img src="1.svg" alt="">
+            <img src="2.svg" alt="">
+            <img src="3.svg" alt="">
+            <img src="4.svg" alt="">
+            <img src="5.svg" alt="">
+            <img src="6.svg" alt="">
+            <img src="7.svg" alt="">
+            <img src="8.svg" alt="">
+            <img src="9.svg" alt="">
+            <img src="10.svg" alt="">
+            <img src="11.svg" alt="">
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="site-footer"><span> © 2026 MengHeng Productions </span><span>UX/UI Design By: MengHeng</span><span class="footer-actions"><a class="chat-owner-button" href="https://t.me/MengHeng_KH" target="_blank" rel="noopener noreferrer">MengHeng<span aria-hidden="true">&#8599;</span></a><a class="chat-owner-button" href="https://t.me/MengHeng_Productions" target="_blank" rel="noopener noreferrer">MengHeng-productions (community)<span aria-hidden="true">&#8599;</span></a></span></footer>
+  </div>
+  <div class="specs-overlay" id="specsOverlay">
+    <div class="specs-modal" role="dialog" aria-modal="true" aria-labelledby="specsModalTitle">
+      <button class="specs-close" id="specsClose" aria-label="Close">&times;</button>
+      <p class="eyebrow">Information</p>
+      <h3 id="specsModalTitle"></h3>
+      <p class="specs-modal-line" id="specsModalSpecs"></p>
+      <div class="specs-qr-wrap" id="specsQRWrap" hidden>
+        <img id="specsQR" src="" alt="KHQR payment code">
+      </div>
+      <p class="specs-price" id="specsPrice"></p>
+      <p class="specs-status" id="specsStatus">Payment required</p>
+      <a class="download-button specs-confirm" id="specsConfirm" href="#">Buy now <span>&#8595;</span></a>
+      <button class="specs-cancel" id="specsCancel" type="button">Cancel</button>
+    </div>
+  </div>
+  <script src="script.js?v=10"></script>
+</body>
+</html>
